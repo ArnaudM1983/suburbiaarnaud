@@ -9,8 +9,10 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Fresh"
-						}
+							"text": "Fresh Skateboards",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -26,8 +28,8 @@
 				]
 			},
 			"button": {
-				"__TYPE__": "LinkContent",
 				"key": "66be290f-c686-436d-b513-740420fff3ba",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "https://prismic.io",

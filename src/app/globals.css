@@ -1,3 +1,9 @@
 @import "tailwindcss";
 
-
+@layer base {
+  :root {
+    --font-bowlby-sc: "Bowlby One SC", sans-serif;
+    --font-dm-mono: "DM Mono", monospace;
+    --brand-pink: #f7d0e9;  
+  }
+}
