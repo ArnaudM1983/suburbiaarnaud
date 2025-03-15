@@ -2,10 +2,13 @@ import Link from 'next/link'
 import React from 'react'
 import { ButtonLink } from './ButtonLink'
 import { Logo } from './Logo'
+import { createClient } from '@/prismicio'
+import { PrismicNextLink } from '@prismicio/next'
 
-type Props = {}
+const Header = async () => {
+    const client = createClient()
+    const settings = await client.getSingle("settings")
 
-export default function Header({ }: Props) {
     return (
         <header className="header absolute left-0 right-0 top-0 z-50 h-36 px-10 py-4 hd:h-32">
             <div className="px-10 flex items-center justify-between w-full">
@@ -13,9 +16,11 @@ export default function Header({ }: Props) {
                 <nav aria-label="Main"
                     className="">
                     <ul className="flex flex-wrap items-center justify-center gap-8">
-                        <li>Board</li>
-                        <li>Board</li>
-                        <li>Board</li>
+                        {settings.data.navigation.map((item) => (
+                            <li key={item.link.text} className='[color:white]'>
+                            <PrismicNextLink field={item.link} className="~text-lg/xl" />
+                          </li>
+                        ))}
                     </ul>
                 </nav>
                 <div className="justify-self-end">
@@ -28,3 +33,5 @@ export default function Header({ }: Props) {
         </header>
     )
 }
+
+export default Header;

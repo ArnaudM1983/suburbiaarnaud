@@ -24,26 +24,20 @@
 
 @layer utilities {
     .bg-texture {
-        background-image: url("/bg-texture.webp");
-        background-size: 720px 460px;
+        background-image: url("/city.webp");
+        background-size: cover;
         background-repeat: repeat;
         background-position: center;
     }
 }
 
 .button-cutout {
+    border-radius: 20px;
     position: relative;
-    filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000)
-      drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000)
-      drop-shadow(8px 8px 0 #000);
-  
-    &:hover {
-      filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000)
-        drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000)
-        drop-shadow(2px 2px 0 #000);
-    }
-  
-    &::before {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Optionnel pour un effet de transition fluide */
+
+    
+    /* &::before {
       position: absolute;
       top: 0;
       right: calc(100% - 1px);
@@ -81,6 +75,11 @@
         0 100%,
         0 0
       );
-    }
+    } */
+  }
+
+  .button-cutout:hover {
+    background-color: #4876ff; /* Couleur de fond bleue au hover */
+    color: white; /* Change la couleur du texte si nécessaire */
   }
   
