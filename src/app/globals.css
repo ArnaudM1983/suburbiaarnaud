@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 @layer base {
     :root {
         --font-bowlby-sc: "Bowlby One SC", sans-serif;

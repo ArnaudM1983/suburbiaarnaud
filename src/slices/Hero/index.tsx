@@ -4,7 +4,7 @@ import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/re
 import { PrismicNextLink } from "@prismicio/next";
 import { Bounded } from "@/components/bounded";
 import { Heading } from "@/components/heading";
-import { ButtonLink } from "@/components/buttonLink";
+import { ButtonLink } from "@/components/ButtonLink";
 
 /**
  * Props for `Hero`.
@@ -25,7 +25,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         <Heading className="relative max-w-2xl place-self-start text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold ">
           <PrismicText field={slice.primary.heading} />
         </Heading>
-        <div className="flex relative w-full flex-col items-center justify-between ~gap-2/4 lg:flex-row">
+        <div className="mb-12 flex relative w-full flex-col items-center justify-between ~gap-2/4 lg:flex-row">
           <div className="max-w-[45ch] font-semibold md:text-xl">
             <PrismicRichText field={slice.primary.body} />
           </div>
