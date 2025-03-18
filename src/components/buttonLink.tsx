@@ -19,7 +19,7 @@ export function ButtonLink({
   return (
     <PrismicNextLink
       className={clsx(
-        "button-cutout group mx-4 inline-flex items-center bg-gradient-to-b from-25% to-75% bg-[length:100%_400%] font-bold transition-[filter,background-position] duration-300 hover:bg-bottom",
+        "button-cutout group inline-flex items-center bg-gradient-to-b from-25% to-75% bg-[length:100%_400%] font-bold transition-[filter,background-position] duration-300 hover:bg-bottom",
         size === "sm" && "gap-2.5 py-2 text-base",
         size === "md" && "gap-3 px-1 text-lg ~py-2.5/3",
         size === "lg" && "~text-lg/2xl gap-3 px-6 py-3",

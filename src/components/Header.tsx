@@ -24,7 +24,7 @@ const Header = async () => {
                     </ul>
                 </nav>
                 <div className="justify-self-end">
-                    <ButtonLink className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-blue)]" href="" icon="cart" color="purple" aria-label="Cart (1)">
+                    <ButtonLink className="z-20 mt-2 px-4 py-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)]" href="" icon="cart" color="purple" aria-label="Cart (1)">
                         <span className="md:hidden">1</span>
                         <span className="hidden md:inline">Cart (1)</span>
                     </ButtonLink>

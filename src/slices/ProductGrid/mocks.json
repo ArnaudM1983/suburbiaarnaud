@@ -1,0 +1,52 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Medicine"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit nulla do ipsum cillum officia non consequat eu culpa. Eiusmod amet ad Lorem minim magna do commodo aliqua veniam proident sint."
+						}
+					}
+				]
+			},
+			"product": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"skateboard",
+								{
+									"key": "d2c13173-ecb6-40b7-88a1-35abd26ee31a",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+h2{
+  font-family: var(--font-bowlby-sc), sans-serif;
+}
+
 @layer base {
     :root {
         --font-bowlby-sc: "Bowlby One SC", sans-serif;
@@ -16,19 +20,31 @@
         --brand-pink: #f7d0e9;
         --brand-blue: #4876ff;
         --brand-navy: #2e3192;
+        --brand-verdigris: #00AFB9;
+        --brand-amber: #FFBE0B;
         --brand-orange: #ff7347;
+        --brand-light-orange: #ffb561;
         --brand-purple: #692e54;
-        --brand-gray: #fffdf9;
+        --brand-gray: #F5F5F5;
+        --brand-light-gray: #e8e7e7;
     }
 }
 
 @layer utilities {
-    .bg-texture {
+    .bg-header {
         background-image: url("/city.webp");
         background-size: cover;
         background-repeat: repeat;
         background-position: center;
     }
+
+    .bg-texture {
+      background-image: url("/bg-texture.webp");
+      background-size: 720px 460px;
+      background-repeat: repeat;
+      background-position: center;
+    }
+    
 }
 
 .button-cutout {
@@ -78,8 +94,5 @@
     } */
   }
 
-  .button-cutout:hover {
-    background-color: #4876ff; /* Couleur de fond bleue au hover */
-    color: white; /* Change la couleur du texte si nécessaire */
-  }
+  
   
