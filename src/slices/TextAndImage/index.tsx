@@ -30,21 +30,22 @@ const TextAndImage: FC<TextAndImageProps> = ({ slice }) => {
       )}
     >
 
-      <div className="grid">
-      <Heading size="lg" as="h2" className="pt-20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-        <PrismicText field={slice.primary.heading} />
-      </Heading>
-
-      <div className="max-w-md text-lg leading-relaxed">
-        <PrismicRichText field={slice.primary.body} />
-      </div>
-      <ButtonLink
-        field={slice.primary.button} className="z-20 mt-2 px-6 py-3 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] text-white hover:text-black"
-        color={theme === "Lime" ? "orange" : "lime"}>
-        {slice.primary.button.text} 
-      </ButtonLink>
-      <PrismicNextImage field={slice.primary.foreground_image} />
-      <PrismicNextImage field={slice.primary.background_image} />
+      <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-24">
+        <div>
+          <Heading size="lg" as="h2" className="pt-20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+            <PrismicText field={slice.primary.heading} />
+          </Heading>
+          <div className="max-w-md text-lg leading-relaxed">
+            <PrismicRichText field={slice.primary.body} />
+          </div>
+          <ButtonLink
+            field={slice.primary.button} className="z-20 mt-2 px-6 py-3 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] text-white hover:text-black"
+            color={theme === "Lime" ? "orange" : "lime"}>
+            {slice.primary.button.text}
+          </ButtonLink>
+        </div>
+        <PrismicNextImage field={slice.primary.foreground_image} />
+        <PrismicNextImage field={slice.primary.background_image} />
       </div>
     </Bounded>
   );
