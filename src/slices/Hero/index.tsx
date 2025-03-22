@@ -5,6 +5,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import { Bounded } from "@/components/bounded";
 import { Heading } from "@/components/heading";
 import { ButtonLink } from "@/components/ButtonLink";
+import { InteractiveSkateboard } from "./InteractiveSkateboard";
 
 /**
  * Props for `Hero`.
@@ -39,7 +40,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           </ButtonLink>
         </div>
       </div>
-
+      <InteractiveSkateboard />
     </Bounded>
   );
 };

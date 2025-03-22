@@ -37,9 +37,9 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
         "py-26",
         "sticky top-[calc(var(--index)*2rem)]",
         theme === "Blue" && "bg-[color:var(--brand-verdigris)] text-white",
-        theme === "Orange" && "bg-texture bg-[color:var(--brand-pink)] ",
-        theme === "Navy" && "bg-texture bg-[color:var(--brand-gray)]",
-        theme === "Lime" && "bg-texture bg-[color:var(--brand-blue)] text-white"
+        theme === "Orange" && "bg-[color:var(--brand-pink)] ",
+        theme === "Navy" && "bg-[color:var(--brand-gray)]",
+        theme === "Lime" && "bg-[color:var(--brand-blue)] text-white"
       )}
       style={{ "--index": index }}
     >
