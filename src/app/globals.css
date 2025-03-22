@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-h2{
+h2, h3{
   font-family: var(--font-bowlby-sc), sans-serif;
 }
 
@@ -26,6 +26,7 @@ h2{
         --brand-light-orange: #FFBE0B;
         --brand-purple: #692e54;
         --brand-gray: #F5F5F5;
+        --brand-medium-gray: #3a3c3d;
         --brand-light-gray: #e8e7e7;
     }
 }

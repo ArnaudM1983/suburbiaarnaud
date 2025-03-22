@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consequat ea officia esse. Qui eiusmod ut anim labore tempor mollit tempor adipisicing commodo proident id ut irure. Eu laboris cupidatat nostrud magna deserunt ad reprehenderit nisi voluptate in Lorem laboris sit."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
