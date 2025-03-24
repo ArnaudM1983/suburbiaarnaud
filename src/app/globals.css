@@ -45,6 +45,12 @@ h1, h2, h3{
       background-repeat: repeat;
       background-position: center;
     }
+
+    .wall-texture {
+      background-image: url("/wall-texture.webp");
+      background-position: center;
+      background-size: cover;
+    }
     
 }
 

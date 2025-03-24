@@ -36,15 +36,15 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         <Heading className="[color:white] relative max-w-2xl place-self-start text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold ">
           <PrismicText field={slice.primary.heading} />
         </Heading>
-        <div className="mb-12 flex relative w-full flex-col items-center justify-between ~gap-2/4 lg:flex-row">
-          <div className="[color:white] max-w-[45ch] font-semibold md:text-xl">
+        <div className="mb-12 flex relative w-full flex-col items-center justify-between gap-4 lg:flex-row">
+          <div className="[color:white] max-w-[45ch] font-semibold text-xs md:text-xl">
             <PrismicRichText field={slice.primary.body} />
           </div>
           <ButtonLink
             field={slice.primary.button}
             icon="skateboard"
             size="lg"
-            className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)]"
+            className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] py-2 px-4 text-xs sm:text-xs md:text-base"
           >
             {slice.primary.button.text}
           </ButtonLink>
