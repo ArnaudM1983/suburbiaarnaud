@@ -28,7 +28,7 @@ export async function SkateboardProduct({ id }: Props) {
                 <PrismicNextImage alt='' field={product.data.image} width={150}  
                 className=" mx-auto w-[58%] origin-top transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-150"/>
             </div>
-            <h3 className='my-2 text-center font-sans leading-tight text-2xl font-extrabold'>{product.data.name}</h3>
+            <h3 className='my-2 text-center font-sans leading-tight text-2xl'>{product.data.name}</h3>
             <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                 <ButtonLink field={product.data.customizer_link} className="z-20 mt-2 px-4 py-1 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)]" href="" color="purple" aria-label="Customise">
                     Customise

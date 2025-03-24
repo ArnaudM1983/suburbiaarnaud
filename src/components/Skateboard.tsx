@@ -8,134 +8,233 @@ import { useGLTF, useTexture } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
 type SkateboardProps = {
-
+    wheelTextureURLs: string[];
+    wheelTextureURL: string;
+    deckTextureURLs: string[];
+    deckTextureURL: string;
+    truckColor: string;
+    boltColor: string;
+    constantWheelSpin?: boolean;
 }
 
 type GLTFResult = GLTF & {
-  nodes: {
-    GripTape: THREE.Mesh
-    Wheel1: THREE.Mesh
-    Wheel2: THREE.Mesh
-    Deck: THREE.Mesh
-    Wheel4: THREE.Mesh
-    Bolts: THREE.Mesh
-    Wheel3: THREE.Mesh
-    Baseplates: THREE.Mesh
-    Truck1: THREE.Mesh
-    Truck2: THREE.Mesh
-  }
-  materials: {}
+    nodes: {
+        GripTape: THREE.Mesh
+        Wheel1: THREE.Mesh
+        Wheel2: THREE.Mesh
+        Deck: THREE.Mesh
+        Wheel4: THREE.Mesh
+        Bolts: THREE.Mesh
+        Wheel3: THREE.Mesh
+        Baseplates: THREE.Mesh
+        Truck1: THREE.Mesh
+        Truck2: THREE.Mesh
+    }
+    materials: {}
 }
 
-export function Skateboard(props: SkateboardProps) {
-  const { nodes, materials } = useGLTF('/skateboard.gltf') as unknown as GLTFResult
+export function Skateboard({
+    wheelTextureURL, wheelTextureURLs, deckTextureURL, deckTextureURLs, truckColor, boltColor, constantWheelSpin
+}: SkateboardProps) {
+    const { nodes, materials } = useGLTF('/skateboard.gltf') as unknown as GLTFResult;
 
-const gripTapeDiffuse = useTexture("/skateboard/griptape-diffuse.webp")
-const gripTapeRoughness = useTexture("/skateboard/griptape-roughness.webp")
+    // Wheel Textures
+    const wheelTextures = useTexture(wheelTextureURLs)
+    wheelTextures.forEach((texture) => {
+        texture.flipY = false;
+        texture.colorSpace = THREE.SRGBColorSpace;
+    })
 
-const gridTapeMaterial = useMemo(()=>{
-    const material = new THREE.MeshStandardMaterial({
-        map: gripTapeDiffuse,
-        bumpMap: gripTapeRoughness,
-        roughnessMap : gripTapeRoughness,
-        bumpScale : 3.5,
-        roughness: .8,
-        color: "#555555",
-    });
+    const wheelTextureIndex = wheelTextureURLs.findIndex(
+        (url)=> url === wheelTextureURL
+    )
 
-    return material;
-}, [gripTapeDiffuse, gripTapeRoughness]);
+    const wheelTexture = wheelTextures[wheelTextureIndex]
 
-  return (
-    <group {...props} dispose={null}>
-      <group name="Scene">
-        <mesh
-          name="GripTape"
-          castShadow
-          receiveShadow
-          geometry={nodes.GripTape.geometry}
-          material={gridTapeMaterial}
-          position={[0, 0.286, -0.002]}
-        />
-        <mesh
-          name="Wheel1"
-          castShadow
-          receiveShadow
-          geometry={nodes.Wheel1.geometry}
-          material={nodes.Wheel1.material}
-          position={[0.238, 0.086, 0.635]}
-        />
-        <mesh
-          name="Wheel2"
-          castShadow
-          receiveShadow
-          geometry={nodes.Wheel2.geometry}
-          material={nodes.Wheel2.material}
-          position={[-0.237, 0.086, 0.635]}
-        />
-        <mesh
-          name="Deck"
-          castShadow
-          receiveShadow
-          geometry={nodes.Deck.geometry}
-          material={nodes.Deck.material}
-          position={[0, 0.271, -0.002]}
-        />
-        <mesh
-          name="Wheel4"
-          castShadow
-          receiveShadow
-          geometry={nodes.Wheel4.geometry}
-          material={nodes.Wheel4.material}
-          position={[-0.238, 0.086, -0.635]}
-          rotation={[Math.PI, 0, Math.PI]}
-        />
-        <mesh
-          name="Bolts"
-          castShadow
-          receiveShadow
-          geometry={nodes.Bolts.geometry}
-          material={nodes.Bolts.material}
-          position={[0, 0.198, 0]}
-          rotation={[Math.PI, 0, Math.PI]}
-        />
-        <mesh
-          name="Wheel3"
-          castShadow
-          receiveShadow
-          geometry={nodes.Wheel3.geometry}
-          material={nodes.Wheel3.material}
-          position={[0.237, 0.086, -0.635]}
-          rotation={[Math.PI, 0, Math.PI]}
-        />
-        <mesh
-          name="Baseplates"
-          castShadow
-          receiveShadow
-          geometry={nodes.Baseplates.geometry}
-          material={nodes.Baseplates.material}
-          position={[0, 0.211, 0]}
-        />
-        <mesh
-          name="Truck1"
-          castShadow
-          receiveShadow
-          geometry={nodes.Truck1.geometry}
-          material={nodes.Truck1.material}
-          position={[0, 0.101, -0.617]}
-        />
-        <mesh
-          name="Truck2"
-          castShadow
-          receiveShadow
-          geometry={nodes.Truck2.geometry}
-          material={nodes.Truck2.material}
-          position={[0, 0.101, 0.617]}
-          rotation={[Math.PI, 0, Math.PI]}
-        />
-      </group>
-    </group>
-  )
+    // Deck Textures
+    const deckTextures = useTexture(deckTextureURLs)
+    deckTextures.forEach((texture) => {
+        texture.flipY = false;
+        texture.colorSpace = THREE.SRGBColorSpace;
+    })
+
+    const deckTextureIndex = deckTextureURLs.findIndex(
+        (url)=> url === deckTextureURL
+    )
+
+    const deckTexture = deckTextures[deckTextureIndex]
+
+    const gripTapeDiffuse = useTexture("/skateboard/griptape-diffuse.webp");
+    const gripTapeRoughness = useTexture("/skateboard/griptape-roughness.webp");
+
+    const gridTapeMaterial = useMemo(() => {
+        const material = new THREE.MeshStandardMaterial({
+            map: gripTapeDiffuse,
+            bumpMap: gripTapeRoughness,
+            roughnessMap: gripTapeRoughness,
+            bumpScale: 3.5,
+            roughness: .8,
+            color: "#555555",
+        });
+
+        if (gripTapeDiffuse) {
+            gripTapeDiffuse.wrapS = THREE.RepeatWrapping;
+            gripTapeDiffuse.wrapT = THREE.RepeatWrapping;
+            gripTapeDiffuse.repeat.set(9, 9);
+            gripTapeDiffuse.needsUpdate = true;
+
+            gripTapeRoughness.wrapS = THREE.RepeatWrapping;
+            gripTapeRoughness.wrapT = THREE.RepeatWrapping;
+            gripTapeRoughness.repeat.set(9, 9);
+            gripTapeRoughness.needsUpdate = true;
+
+            gripTapeRoughness.anisotropy = 8;
+        }
+
+
+        return material;
+    }, [gripTapeDiffuse, gripTapeRoughness]);
+
+    const boltMaterial = useMemo(
+        () =>
+            new THREE.MeshStandardMaterial({
+                color: boltColor,
+                metalness: 0.5,
+                roughness: 0.3,
+            }),
+        [boltColor]
+    );
+
+    const metalNormal = useTexture("/skateboard/metal-normal.avif");
+    metalNormal.wrapS = THREE.RepeatWrapping;
+    metalNormal.wrapT = THREE.RepeatWrapping;
+    metalNormal.anisotropy = 8;
+    metalNormal.repeat.set(8, 8);
+
+    const truckMaterial = useMemo(
+        () =>
+            new THREE.MeshStandardMaterial({
+                color: truckColor,
+                normalMap: metalNormal,
+                normalScale: new THREE.Vector2(0.3, 0.3),
+                metalness: 0.8,
+                roughness: 0.25,
+            }),
+        [boltColor]
+    );
+
+    deckTexture.flipY = false;
+
+    const deckMaterial = useMemo(
+        () =>
+            new THREE.MeshStandardMaterial({
+                map: deckTexture,
+                roughness: 0.1,
+            }),
+        [deckTexture]
+    );
+
+    wheelTexture.flipY = false;
+
+    const wheelMaterial = useMemo(
+        () =>
+            new THREE.MeshStandardMaterial({
+                map: wheelTexture,
+                roughness: 0.35,
+            }),
+        [wheelTexture]
+    );
+
+    return (
+        <group dispose={null}>
+            <group name="Scene">
+                <mesh
+                    name="GripTape"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.GripTape.geometry}
+                    material={gridTapeMaterial}
+                    position={[0, 0.286, -0.002]}
+                />
+                <mesh
+                    name="Wheel1"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Wheel1.geometry}
+                    material={wheelMaterial}
+                    position={[0.238, 0.086, 0.635]}
+                />
+                <mesh
+                    name="Wheel2"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Wheel2.geometry}
+                    material={wheelMaterial}
+                    position={[-0.237, 0.086, 0.635]}
+                />
+                <mesh
+                    name="Deck"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Deck.geometry}
+                    material={deckMaterial}
+                    position={[0, 0.271, -0.002]}
+                />
+                <mesh
+                    name="Wheel4"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Wheel4.geometry}
+                    material={wheelMaterial}
+                    position={[-0.238, 0.086, -0.635]}
+                    rotation={[Math.PI, 0, Math.PI]}
+                />
+                <mesh
+                    name="Bolts"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Bolts.geometry}
+                    material={boltMaterial}
+                    position={[0, 0.198, 0]}
+                    rotation={[Math.PI, 0, Math.PI]}
+                />
+                <mesh
+                    name="Wheel3"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Wheel3.geometry}
+                    material={wheelMaterial}
+                    position={[0.237, 0.086, -0.635]}
+                    rotation={[Math.PI, 0, Math.PI]}
+                />
+                <mesh
+                    name="Baseplates"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Baseplates.geometry}
+                    material={truckMaterial}
+                    position={[0, 0.211, 0]}
+                />
+                <mesh
+                    name="Truck1"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Truck1.geometry}
+                    material={truckMaterial}
+                    position={[0, 0.101, -0.617]}
+                />
+                <mesh
+                    name="Truck2"
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Truck2.geometry}
+                    material={truckMaterial}
+                    position={[0, 0.101, 0.617]}
+                    rotation={[Math.PI, 0, Math.PI]}
+                />
+            </group>
+        </group>
+    )
 }
 
 useGLTF.preload('/skateboard.gltf')
