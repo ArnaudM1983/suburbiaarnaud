@@ -29,7 +29,6 @@ export async function Footer() {
           boardTextureURLs={boardTextureURLs}
           className="absolute inset-0 overflow-hidden"
         />
-        <Logo className="pointer-events-none relative h-20 mix-blend-exclusion md:h-28" />
       </div>
       <Bounded as="nav">
         <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">

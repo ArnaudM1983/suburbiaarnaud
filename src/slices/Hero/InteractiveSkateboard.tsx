@@ -164,7 +164,7 @@ function Scene(
 
             <Environment files={"/hdr/warehouse-256.hdr"} />
             <group ref={originRef}>
-                <group ref={containerRef} position={[-0.25, 0.1, -0.635]}>
+                <group ref={containerRef} position={[-0.45, 0.1, -0.635]}>
                     <group position={[0, -0.086, 0.635]}>
                         <Skateboard
                             wheelTextureURLs={[wheelTextureURL]}

@@ -51,7 +51,7 @@ export function Skater({ skater, index }: Props) {
 
             <ButtonLink field={skater.data.customizer_link} size="sm"
             className="mt-4 px-6 py-3 bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] text-white font-semibold rounded-lg">
-                Build their board
+                Crée Maintenant
             </ButtonLink>
         </div>
     );

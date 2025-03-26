@@ -10,16 +10,22 @@ const Header = async () => {
     const settings = await client.getSingle("settings")
 
     return (
-        <header className="header absolute left-0 right-0 top-0 z-50 h-36 px-6 py-4 hd:h-32">
-            <div className="grid w-full max-w-6xl mx-auto grid-cols-2 items-start gap-2 md:grid-cols-3">
+        <header className="header absolute left-0 right-0 top-0 z-50 h-36 px-10 py-4 hd:h-32">
+            <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
+                
+                {/* Navigation à gauche */}
+                <nav aria-label="Main" className="flex justify-start">
+                    <ul className="flex flex-wrap items-center gap-8">
+                        {settings.data.navigation.map((item) => (
+                            <li key={item.link.text} className="[color:white]">
+                                <PrismicNextLink field={item.link} className="text-sm md:text-lg xl:text-xl" />
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
 
-                {/* Logo */}
-                <Link href="/" className="justify-self-start self-start">
-                    <Logo className="text-brand-purple h-8 md:h-16" />
-                </Link>
-
-                {/* Bouton Panier */}
-                <div className="justify-self-end self-start">
+                {/* Bouton Panier à droite */}
+                <div className="flex justify-end">
                     <ButtonLink
                         href=""
                         icon="cart"
@@ -32,23 +38,13 @@ const Header = async () => {
                     </ButtonLink>
                 </div>
 
-                {/* Navigation */}
-                <nav aria-label="Main" className="col-span-2 md:col-span-1 md:justify-self-center">
-                    <ul className="flex flex-wrap items-center justify-center gap-8">
-                        {settings.data.navigation.map((item) => (
-                            <li key={item.link.text} className="[color:white]">
-                                <PrismicNextLink field={item.link} className="text-sm md:text-lg xl:text-xl" />
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-
             </div>
         </header>
     )
 }
 
 export default Header;
+
 
 
 
