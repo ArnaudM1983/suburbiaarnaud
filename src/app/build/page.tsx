@@ -45,12 +45,12 @@ export default async function Page(props: {
                         <Preview deckTextureURLs={deckTextureURLs} wheelTextureURLs={wheelTextureURLs} />
                     </div>
 
-                    <a
+                    <Link
                         href="/"
                         className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] py-2 px-6 text-xs sm:text-xs md:text-base text-center rounded-full hover:text-white"
                     >
                         Accueil
-                    </a>
+                    </Link>
                 </div>
                 <div className="grow wall-texture bg-zinc-900 text-white p-5 lg:w-96 lg:shrink-0 lg:grow-0">
                     <Heading as="h1" size="sm" className="mb-6 mt-0 lg:text-2Òxl">

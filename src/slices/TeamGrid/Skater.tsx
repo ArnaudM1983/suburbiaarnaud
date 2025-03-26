@@ -7,14 +7,7 @@ type Props = {
     index: number;
 };
 
-export function Skater({ skater, index }: Props) {
-    const colors = [
-        "text-brand-blue",
-        "text-brand-lime",
-        "text-brand-orange",
-        "text-brand-pink",
-        "text-brand-purple",
-    ];
+export function Skater({ skater }: Props) {
 
     return (
         <div className="skater group relative flex flex-col items-center gap-4">
