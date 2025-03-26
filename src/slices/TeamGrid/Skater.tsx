@@ -1,4 +1,4 @@
-import { ButtonLink } from "@/components/ButtonLink";
+
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
@@ -49,10 +49,12 @@ export function Skater({ skater, index }: Props) {
                 </h3>
             </div>
 
-            <ButtonLink field={skater.data.customizer_link} size="sm"
-            className="mt-4 px-6 py-3 bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] text-white font-semibold rounded-lg">
-                Crée Maintenant
-            </ButtonLink>
+            <a
+                href="/build"
+                className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] py-2 px-6 text-xs sm:text-xs md:text-base text-center rounded-full hover:text-white"
+            >
+                Crée maintenant
+            </a>
         </div>
     );
 }

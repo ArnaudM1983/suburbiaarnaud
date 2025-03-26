@@ -7,7 +7,6 @@ import {
 import clsx from "clsx";
 
 import { Bounded } from "@/components/bounded";
-import { ButtonLink } from "@/components/ButtonLink";
 import { Heading } from "@/components/heading";
 import { SlideIn } from "@/components/SlideIn";
 import { ParallaxImage } from "./ParallaxImage";
@@ -61,13 +60,12 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
             </div>
           </SlideIn>
           <SlideIn>
-            <ButtonLink
-              field={slice.primary.button}
-              color={theme === "Lime" ? "orange" : "lime"}
-              className="mt-4 px-6 py-3 bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] text-white font-semibold rounded-lg"
+            <a
+              href="/build"
+              className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] py-2 px-6 text-xs sm:text-xs md:text-base text-center rounded-full hover:text-white"
             >
-              {slice.primary.button.text}
-            </ButtonLink>
+              Crée ta board
+            </a>
           </SlideIn>
         </div>
 

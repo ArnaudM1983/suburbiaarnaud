@@ -1,4 +1,4 @@
-import { ButtonLink } from '@/components/ButtonLink';
+
 import { Heading } from '@/components/heading';
 import React from 'react';
 
@@ -44,12 +44,12 @@ export default async function Page(props: {
                         <Preview deckTextureURLs={deckTextureURLs} wheelTextureURLs={wheelTextureURLs} />
                     </div>
 
-                    <ButtonLink
+                    <a
                         href="/"
-                        className="z-20 mt-6 ms-6 px-3 py-1 md:px-4 md:py-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)]"
+                        className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] py-2 px-6 text-xs sm:text-xs md:text-base text-center rounded-full hover:text-white"
                     >
                         Accueil
-                    </ButtonLink>
+                    </a>
                 </div>
                 <div className="grow wall-texture bg-zinc-900 text-white p-5 lg:w-96 lg:shrink-0 lg:grow-0">
                     <Heading as="h1" size="sm" className="mb-6 mt-0 lg:text-2Òxl">
@@ -61,14 +61,12 @@ export default async function Page(props: {
                         metals={metals}
                         className="mb-6"
                     />
-                    <ButtonLink
-                        href=""
-                        color="lime"
-                        icon="plus"
-                        className="z-20 px-3 py-1 md:px-4 md:py-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] text-sm"
+                    <a
+                        href="/build"
+                        className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] py-2 px-6 text-xs sm:text-xs md:text-base text-center rounded-full hover:text-white"
                     >
                         Ajouter au panier
-                    </ButtonLink>
+                    </a>
                 </div>
             </CustomizerControlsProvider>
         </div>

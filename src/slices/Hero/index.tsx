@@ -40,7 +40,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           </div>
           <a
             href="/build" 
-            className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] py-2 px-4 text-xs sm:text-xs md:text-base text-center"
+            className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] py-2 px-6 text-xs sm:text-xs md:text-base text-center rounded-full hover:text-white"
           >
             Crée ta board 
           </a>
