@@ -5,7 +5,7 @@ type BoundedProps = {
   as?: ElementType;
   className?: string;
   style?: CSSProperties;
-  children: ReactNode;
+  children: ReactNode;  // Gardons-le comme ReactNode
 };
 
 export function Bounded({
