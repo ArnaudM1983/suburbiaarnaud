@@ -3,7 +3,6 @@ import React from "react";
 import { asImageSrc } from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
-import { Logo } from "@/components/Logo";
 import { Bounded } from "./bounded";
 import { FooterPhysics } from "./FooterPhysics";
 

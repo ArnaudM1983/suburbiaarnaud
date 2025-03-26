@@ -2,11 +2,10 @@
 
 import * as THREE from "three";
 import { Skateboard } from '@/components/Skateboard';
-import { ContactShadows, Environment, Html, OrbitControls } from '@react-three/drei';
+import { ContactShadows, Environment, Html } from '@react-three/drei';
 import { Canvas, ThreeEvent, useThree } from '@react-three/fiber';
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import gsap from "gsap";
-import { isKeyObject } from "util/types";
 import { Hotspot } from "./Hotspot";
 import { WavyPaths } from "./WavyPaths";
 

@@ -3,7 +3,6 @@ import { Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
 
 import { Bounded } from "@/components/bounded";
-import { PrismicNextLink } from "@prismicio/next";
 import { Heading } from "@/components/heading";
 import { SkateboardProduct } from "./SkateboardProduct";
 import { SlideIn } from "@/components/SlideIn";

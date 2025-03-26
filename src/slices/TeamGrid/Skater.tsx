@@ -1,7 +1,6 @@
 
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import clsx from "clsx";
 
 type Props = {
     skater: Content.SkaterDocument;
@@ -16,8 +15,6 @@ export function Skater({ skater, index }: Props) {
         "text-brand-pink",
         "text-brand-purple",
     ];
-
-    const scribbleColor = colors[index];
 
     return (
         <div className="skater group relative flex flex-col items-center gap-4">

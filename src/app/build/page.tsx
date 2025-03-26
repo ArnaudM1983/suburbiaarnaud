@@ -7,6 +7,7 @@ import { createClient } from '@/prismicio';
 import Preview from './Preview';
 import { asImageSrc } from '@prismicio/client';
 import Controls from './Controls';
+import Link from 'next/link';
 
 type SearchParams = {
     wheel?: string;
@@ -61,12 +62,12 @@ export default async function Page(props: {
                         metals={metals}
                         className="mb-6"
                     />
-                    <a
+                    <Link
                         href="/build"
                         className="z-20 mt-2 block bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-light-orange)] py-2 px-6 text-xs sm:text-xs md:text-base text-center rounded-full hover:text-white"
                     >
                         Ajouter au panier
-                    </a>
+                    </Link>
                 </div>
             </CustomizerControlsProvider>
         </div>
