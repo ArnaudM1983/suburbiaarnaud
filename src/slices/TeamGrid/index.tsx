@@ -1,4 +1,3 @@
-
 import { Heading } from "@/components/heading";
 import { createClient } from "@/prismicio";
 import { Content } from "@prismicio/client";
@@ -15,7 +14,7 @@ export type TeamGridProps = SliceComponentProps<Content.TeamGridSlice>;
 /**
  * Component for "TeamGrid" Slices.
  */
-const TeamGrid = async ({ slice }: TeamGridProps): Promise<JSX.Element> => {
+const TeamGrid = async ({ slice }: TeamGridProps): Promise<React.ReactNode> => {
   const client = createClient();
   const skaters = await client.getAllByType("skater");
 
