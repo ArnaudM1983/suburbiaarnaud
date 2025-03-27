@@ -6,7 +6,6 @@ import {
 } from "@prismicio/react";
 import clsx from "clsx";
 
-import { Bounded } from "@/components/bounded";
 import { Heading } from "@/components/heading";
 import { SlideIn } from "@/components/SlideIn";
 import { ParallaxImage } from "./ParallaxImage";
@@ -29,7 +28,7 @@ export type TextAndImageProps = SliceComponentProps<Content.TextAndImageSlice>;
 const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
   const theme = slice.primary.theme;
   return (
-    <Bounded
+    <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={clsx(
@@ -42,6 +41,7 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
       )}
       style={{ "--index": index }}
     >
+      <div className="px-6 py-6 mx-auto w-full max-w-6xl">
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-24">
         <div
           className={clsx(
@@ -74,7 +74,8 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
           backgroundImage={slice.primary.background_image}
         />
       </div>
-    </Bounded>
+      </div>
+    </section>
   );
 };
 

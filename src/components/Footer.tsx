@@ -3,7 +3,6 @@ import React from "react";
 import { asImageSrc } from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
-import { Bounded } from "./bounded";
 import { FooterPhysics } from "./FooterPhysics";
 
 export async function Footer() {
@@ -29,15 +28,15 @@ export async function Footer() {
           className="absolute inset-0 overflow-hidden"
         />
       </div>
-      <Bounded as="nav">
-        <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
+      <nav>
+        <ul className="my-8 flex flex-wrap justify-center gap-8 ~text-lg/xl">
           {settings.data.navigation.map((item) => (
             <li key={item.link.text} className="hover:underline">
               <PrismicNextLink field={item.link} />
             </li>
           ))}
         </ul>
-      </Bounded>
+      </nav>
       {/* List of links */}
     </footer>
   );

@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { asImageSrc, Content } from "@prismicio/client";
 import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
-import { Bounded } from "@/components/bounded";
 import { Heading } from "@/components/heading";
 import { InteractiveSkateboard } from "./InteractiveSkateboard";
 
@@ -25,7 +24,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
   const boltColor = slice.primary.skateboard_bolt_color || DEFAULT_BOLT_COLOR;
 
   return (
-    <Bounded
+    <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="bg-[color:var(--brand-pink)] relative h-dvh overflow-hidden text-zinc-800 bg-header"
@@ -52,7 +51,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         truckColor={truckColor}
         boltColor={boltColor}
       />
-    </Bounded>
+    </section>
   );
 };
 
